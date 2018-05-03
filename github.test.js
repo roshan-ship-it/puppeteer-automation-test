@@ -13,9 +13,7 @@ const SEARCH_INPUT =
 
 puppeteer
   .launch({
-    headless: false,
-    executablePath:
-      "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
+    headless: true
   })
   .then(async browser => {
     const page = await browser.newPage();
@@ -47,6 +45,6 @@ puppeteer
 
     await page.screenshot({ path: "screenshots/screenshot.png" });
 
-    await browser.close();
+   await browser.close();
   })
   .catch(e => console.log(e));
